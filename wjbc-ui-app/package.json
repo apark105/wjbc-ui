@@ -1,0 +1,11 @@
+{
+  "name": "wjbc-ui-app",
+  "version": "1.0.0",
+  "description": "wjbc ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "David Chung",
+  "license": "ISC"
+}

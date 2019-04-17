@@ -1,0 +1,11 @@
+{
+  "name": "wjbc-ui-test",
+  "version": "1.0.0",
+  "description": "testing suite",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "David Chung",
+  "license": "ISC"
+}
