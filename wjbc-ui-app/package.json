@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "quality": "eslint src",
+    "quality:fix": "eslint src --fix",
     "test": "jest",
     "test:watch": "jest --watch"
   },
