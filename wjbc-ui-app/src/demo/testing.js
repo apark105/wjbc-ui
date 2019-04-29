@@ -1,5 +1,3 @@
-const testing = () => {
-  return 1;
-};
+const testing = () => 1;
 
 export default testing;

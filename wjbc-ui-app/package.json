@@ -1,25 +1,42 @@
 {
-  "name": "wjbc-ui-app",
+  "name": "wjbc-ui",
   "version": "1.0.0",
-  "description": "wjbc ui",
-  "main": "index.js",
+  "description": "",
+  "engines": {
+    "node": ">=6.6.0",
+    "npm": "=>3.10.3"
+  },
+  "license": "ISC",
   "scripts": {
-    "quality": "eslint src",
+    "build": "rm -rf dist && cross-env NODE_ENV=local webpack --display-error-details --config ./webpack.config.js --progress --profile --colors",
+    "build:dev": "rm -rf dist && cross-env NODE_ENV=dev webpack --display-error-details --config ./webpack.config.js --progress --profile --colors",
+    "build:prod": "rm -rf dist-prod && cross-env NODE_ENV=prod webpack --display-error-details --config ./webpack.config.js --progress --profile --colors",
+    "postinstall": "npm run build",
+    "quality": "eslint src --fix",
+    "sonar": "node_modules/sonar-scanner/bin/sonar-scanner -Dproject.settings=sonar-scanner.properties",
+    "start": "cross-env NODE_ENV=local webpack-dev-server --hot",
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "author": "David Chung",
-  "license": "ISC",
   "dependencies": {
+    "connected-react-router": "4.2.3",
+    "history": "^4.7.2",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-event-listener": "^0.4.5",
+    "react-maskedinput": "^4.0.0",
+    "react-modal": "^2.0.2",
+    "react-page-click": "^4.0.1",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-select": "^1.0.0-rc.5",
+    "react-svg-inline": "^2.0.0",
     "redux": "^3.7.2",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "styled-components": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -37,6 +54,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-watch": "^2.0.7",
     "compression-webpack-plugin": "^1.0.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "dotenv-webpack": "^1.5.7",
     "enzyme": "^3.0.0",
@@ -51,6 +69,7 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
     "imports-loader": "^0.7.1",
     "jest": "^23.5.0",
     "jest-cli": "^21.2.1",
@@ -65,6 +84,8 @@
     "sinon": "^6.3.4",
     "sonar-scanner": "^3.1.0",
     "style-loader": "^0.18.2",
+    "superagent-mock": "^3.7.0",
+    "svg-inline-loader": "^0.8.0",
     "webpack": "3.6.0",
     "webpack-dev-server": "2.9.1"
   },
@@ -86,7 +107,7 @@
       "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!(rcb-ease)/)"
+      "node_modules"
     ],
     "testURL": "http://localhost/",
     "setupTestFrameworkScriptFile": "<rootDir>/src/test/setup.js",

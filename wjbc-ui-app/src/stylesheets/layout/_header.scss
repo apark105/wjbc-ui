@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+
+.nav {
+    font-family: $font-stack;
+    width: 100%; 
+    height: 100px;
+    background-color: $primary-background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav__items {
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav__items > a {
+    text-decoration: none;
+    color:white;
+}
