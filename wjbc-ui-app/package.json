@@ -14,7 +14,7 @@
     "postinstall": "npm run build",
     "quality": "eslint src --fix",
     "sonar": "node_modules/sonar-scanner/bin/sonar-scanner -Dproject.settings=sonar-scanner.properties",
-    "start": "cross-env NODE_ENV=local webpack-dev-server --hot",
+    "start": "cross-env NODE_ENV=local webpack-dev-server --hot --open",
     "test": "jest",
     "test:watch": "jest --watch"
   },
