@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calendar from './calendar';
 // import { Route } from 'react-router-dom';
 // import '../stylesheets/main.scss';
 // import Home from './home';
@@ -12,7 +13,13 @@ class App extends Component {
   }
 
   render() {
-    return <div>demo</div>;
+    return (
+      <div>
+        demo
+        <Calendar />
+      </div>
+
+    );
   }
 }
 

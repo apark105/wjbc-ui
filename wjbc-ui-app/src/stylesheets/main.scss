@@ -1,3 +1,14 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+
+.calendar {
+  margin: 0 auto;
+  max-width: 800px;
+  max-height: 900px;
+}
+
+
 // Configuration and helpers
 @import
   'abstracts/variables';
